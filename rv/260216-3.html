@@ -24,21 +24,21 @@ canvas {width: 100%; height: 100%; }
 //lña figura se establece sobre y
   
   var puntos = [];                                         //Arreglo vacio
-  for (var i = 0; i < 50; i++) {                           //
-       puntos.push( new THREE.Vector2(
+  for (var i = 0; i < 50; i++) {
+       puntos.push( new THREE.Vector2(                     //Se insertan puntos al arreglo
        Math.sin(i * 0.2 ) * 15 + 50,
        ( i - 5 ) * 2 ) );
        }
        
   var forma = new THREE.LatheGeometry(puntos);
-  var malla = new TREEH.Mesh(forma);
+  var malla = new THREE.Mesh(forma);
   
   escena.add(malla);
   
   function loop(){
   requestAnimationFrame(loop);
      malla.rotation.x +=0.1;
-    malla.rotation.y +=0.1;
+     malla.rotation.y +=0.1;
     renderer.render(escena,camara);
   }
   loop();
