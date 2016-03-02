@@ -40,7 +40,7 @@ function setup(){
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 10;
   
-  renderer = new THREE.WebGlRenderer();
+  renderer = new THREE.WebGLRenderer();
   render.setSize(window.inneHeight*.95, windiw.innerHeight*.95);
   document.body.appendChild(renderer.domElement);
 }
