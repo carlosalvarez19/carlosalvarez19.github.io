@@ -37,7 +37,7 @@ function setup(){
   
   //se inicializa la camara y el rendered
   
-  camara = new THREE.PerspectiveCamerea();
+  camara = new THREE.PerspectiveCamera();
   camara.position.z = 10;
   
   renderer = new THREE.WebGlRenderer();
