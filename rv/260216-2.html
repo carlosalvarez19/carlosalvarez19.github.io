@@ -38,13 +38,13 @@ canvas {width: 100%; height: 100%; }
   
   escena.add(malla);
   
-  function loop(){
-  requestAnimationFrame(loop);
+  function render(){
+  requestAnimationFrame(render);
      malla.rotation.x +=0.1;
     malla.rotation.y +=0.1;
     renderer.render(escena,camara);
   }
-  loop();
+  render();
   
 </script>
 </body>
