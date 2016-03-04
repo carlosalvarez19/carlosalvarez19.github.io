@@ -20,7 +20,6 @@ canvas {width: 100%; height: 100%; }
   render = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement)
-  var forma = new TREEH.ExtrudeGeometry(figura, {amount: 10});
   
   figura.moveTo(0, 0);
   figura.lineTo(10, 0);
@@ -33,7 +32,8 @@ canvas {width: 100%; height: 100%; }
   figura.lineTo(10, 20);
   figura.lineTo(0, 30);
   figura.lineTo(0, 0);
-  
+
+  var forma = new TREEH.ExtrudeGeometry(figura, {amount: 10});  
   var malla = new TREEH.Mesh(forma);
   
   escena.add(malla);
