@@ -73,7 +73,7 @@ var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
  renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
  document.body.appendChild(renderer.domElement);
  }
- f
+ 
  function loop() {
   requestAnimationFrame(loop);
   malla.rotation.y +=0.01;
@@ -89,8 +89,6 @@ var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
       brazo1.rotation.z += step;
       brazo2.rotation.z -= step;
       
-      }
-  
 }
 
 var escena, camara, renderer, malla;
