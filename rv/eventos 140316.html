@@ -1,0 +1,69 @@
+
+<html>
+  <head>
+  <title>Ejemplo basico de eventos</title>
+  <meta http-equiv="Content.Type" content0#text/html; charset=UTF-8">
+  <style>
+    body { margin: 0; }
+    canvas { wudth = 200%; height = 100%}
+  </style>
+</head>
+<body>
+  <script src="three.min.js"></script>
+  <script>
+  
+    // Inicialización
+    // =============
+    
+    var escena = new THREE.Scene();
+    var aspect = window.innerWidth/window.innerHeight;
+    var camara = new THREE.Perspective Camerea 
+    
+    
+    // Manejo de eventos al estilo tradicional 
+    // =======================================
+    
+    //El manejo de evento usando una llamada a una funcion "callback"
+    // o rtrollamada
+    
+    // Una retrollamada es una funcion *f* que se da como argumento a otra 
+    // funcion *g*. Cuando se llama a *g*, esta ejecuta la funcion *f*. En 
+    // cada lenguaje el mecanismo es diferente; en C se usan apuntadores a 
+    // funciones, y JS se usa en los simbolos.
+    
+    //EventListener es el mecanismo que se usa en JS para ligar la funcion 
+    // de retrollamada.
+    
+    // El tipo de evento esta dado por la operacion misma d ela ventana 
+    // Cf, http://help.dottoro.com/larrqqck.php
+    var tipo_evento = 'resize';
+    
+    // El simbolo listener es el mecanismo que se usa en JS para ligar la 
+    // funcion de retrollamada
+    
+    //Es equivalente a function listener() {
+    var listener= function (){
+      
+      // Se actualiza al relacion de aspecto 
+      camara.aspect = window.innerWidth / window.innerHeight;
+      
+      // Se recomputa al amatriz de proyección
+      camara.updateProyectionMatrix();
+      
+      // Se ajusta el tamaño del renderer
+      renderer.Setsize( window.innerWidth, window.innerHeight );
+      
+      }
+      
+      // La variable 'capturarp' se puede entender como "¿Desa capturar de
+      // forma directa los siguientes eventos?". La 'p' al final del nombre es 
+      // una notacion tradicional en ciertos circulos de programación para 
+      // indicar un predicado, en este caso un verbo.
+      
+      var capturarp = false,
+      
+      // Como ya se menciono antes, el objeto 'window' representa una ventana
+    
+    
+    
+    
