@@ -78,7 +78,7 @@ var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
   requestAnimationFrame(loop);
   malla.rotation.y +=0.01;
   
-  for(var f=0; f<25; f=f+.01;){
+  for(var f=0; f<25; f=f+.01){
   malla.position.x += f;
   }
   
