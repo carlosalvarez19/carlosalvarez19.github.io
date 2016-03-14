@@ -1,5 +1,7 @@
 function Pierna (){
+    //Para definir una pierna heredara el comportamiento de l objeto 3d, habra que revisar primeramente
 THREE.Object3D.call(this);
+    //entonces se procede a desarrollar las mallas par dar forma a un a pierna muy sencilla
 this.pierna = new THREE.Mesh( new THREE.BoxGeometry(1,5,1));
 this.pie = new THREE.Mesh( new THREE.BoxGeometry(1,5,1));
 this.pierna.position.y = -2.5;
@@ -8,6 +10,8 @@ this.pie.position.x = 1;
 this.add(this.pierna);
 this.add(this.pie);
 }
+
+    //finalmente se agraga 
 Pierna.prototype = new THREE.Object3D();
 function setup() {
     var cuerpo = new THREE.Mesh( new THREE.CylinderGeometry(1,2,5,10));
@@ -16,7 +20,7 @@ function setup() {
     cuerpo.position.y = 2;
     piernaD.position.z = -1;
     piernaI.position.z = 1;
-    step = .01;
+    step = 0.1;
     escena = new THREE.Scene();
     escena.add( cuerpo );
     escena.add( piernaD );
