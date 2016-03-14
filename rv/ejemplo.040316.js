@@ -28,7 +28,7 @@ function setup() {
     renderer.setSize( window.innerHeight*.95,window.innerHeight*.95 );
     documnet.body.appendChild( renderer.domElement );
 }
-Function loop(){
+function loop(){
     requestAnimationFrame( loop );
     renderer.render( escena, camara );    
     if ( Math.abs(piernaD.rotation.z) > .5 ) 
