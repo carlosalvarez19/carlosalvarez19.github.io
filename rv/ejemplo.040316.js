@@ -29,7 +29,7 @@ function setup() {
     documnet.body.appendChild( renderer.domElement );
 }
 Function loop(){
-    requestAnimationFrame´( loop );
+    requestAnimationFrame( loop );
     renderer.render( escena, camara );    
     if ( Math.abs(piernaD.rotation.z) > .5 ) 
         step = -step;
