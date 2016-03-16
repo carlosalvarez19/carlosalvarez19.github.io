@@ -28,7 +28,7 @@ function setup() {
   
   
   renderer = new THREE.webGLRenderer();
-  renderer.SetSize( window.InnerHeight*.95, window.InnerHeight*.95 );
+  renderer.setSize( window.InnerHeight*.95, window.InnerHeight*.95 );
   document.body.appendChild( renderer.domElemenet );
 }
   
