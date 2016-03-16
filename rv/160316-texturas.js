@@ -1,6 +1,6 @@
 function setup() { 
   THREE.ImageUtils.crossOrigin = '';
-  var   textura   = THREE.ImageUtils.loadTexture(´http://three.js.org/examples/textures/create.gif');
+  var   textura   = THREE.ImageUtils.loadTexture(´http://threejs.org/examples/textures/create.gif');
   var   material  = THREE.MeshBasicmaterial( {map: textura} );
   var   forma     = new THREE.Box Geometry( 1, 1, 1 );
   malla           = new THREE.Mesh( forma, material );
