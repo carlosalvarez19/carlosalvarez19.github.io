@@ -1,11 +1,20 @@
 function setup() { 
   THREE.ImageUtils.crossOrigin = '';
   var   textura   = THREE.ImageUtils.loadTexture(´http://threejs.org/examples/textures/brick.diffuse.jpg');
-  var   material  = THREE.MeshBasicmaterial( {map: textura} );
-  var   forma     = new THREE.Box Geometry( 1, 4, 9 );
+  var   material  = new THREE.MeshBasicMaterial( {map: textura} );
+  var   forma     = new THREE.BoxGeometry( 1, 4, 9 );
   malla           = new THREE.Mesh( forma, material );
   
-  var luzpuntual  = newTHREE.PointLight(0xFFFFFF);
+  //Tambien se puede hacer un cubo de dimension uno y luiego escalarlo//
+  
+  //var   textura   = THREE.ImageUtils.loadTexture(´http://threejs.org/examples/textures/brick.diffuse.jpg');
+  //var   material  = new THREE.MeshBasicMaterial( {map: textura} );
+  //var   forma     = new THREE.BoxGeometry( 1, 1, 1 );
+  //malla           = new THREE.Mesh( forma, material );
+  //malla.scale.set( 1, 4, 9);
+  
+  
+  var luzpuntual  = new THREE.PointLight(0xFFFFFF);
   luzpuntual.position.x = 10;
   luzpuntual.position.y = 10;
   luzpuntual.position.z = 10;
@@ -14,7 +23,7 @@ function setup() {
   escena.add(malla);
   escena.add(luzpuntual);
   
-  camara = new THREE.PerspectiveCamerea();
+  camara = new THREE.PerspectiveCamera();
   camara.position.z = 10;
   
   
