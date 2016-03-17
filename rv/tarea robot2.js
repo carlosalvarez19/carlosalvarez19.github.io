@@ -1,16 +1,70 @@
+function Cabeza (){
+    //Para definir una pierna heredara el comportamiento de l objeto 3d, habra que revisar primeramente
+THREE.Object3D.call(this);
+    //entonces se procede a desarrollar las mallas par dar forma a un a pierna muy sencilla
+this.ojos = new THREE.Mesh( new THREE.CylinderGeometry(2,2,5,100) );
+this.cuello = new THREE.Mesh( new THREE.CylinderGeometry(1,1,5,100) );
+this.ojos.position.y = -2.5;
+this.pie.position.y = -4.5;
+this.pie.position.x = 1;
+this.add(this.pierna);
+this.add(this.pie);
+}
+
+    //finalmente se agraga 
+Cabeza.prototype = new THREE.Object3D();
+
+
+function setup() {
+  
+    var tri= new THREE.Shape();
+    tri.moveTo(0,0);
+    tri.lineTo(2,2);
+    tri.lineTo(4,0);
+    tri.lineTo(0,0);
+    var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
+  
+    var cuerpo = new THREE.Mesh( new THREE.CylinderGeometry(1,2,5,10));
+    piernaD = new Pierna();
+    piernaI = new Pierna();
+    cuerpo.position.y = 2;
+    piernaD.position.z = -1;
+    piernaI.position.z = 1;
+    step = 0.1;
+    escena = new THREE.Scene();
+    escena.add( cuerpo );
+    escena.add( piernaD );
+    escena.add( piernaI );
+    camara = new THREE.PerspectiveCamera();
+    camara.position.z = 20;
+    
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerHeight*.95,window.innerHeight*.95 );
+    document.body.appendChild( renderer.domElement );
+}
+function loop(){
+    requestAnimationFrame( loop );
+    renderer.render( escena, camara );    
+    if ( Math.abs(piernaD.rotation.z) > .5 ) 
+        step = -step;
+      piernaD.rotation.z += step;
+      piernaI.rotation.z -= step;
+}
+  
+var escena, camara, renderer;
+var step, piernaI, piernaD;
+ 
+setup();
+loop();
+
+
+
 function setup(){
 
 var cuboForma= new THREE.BoxGeometry(10,10,10);
 var brazoForma= new THREE.BoxGeometry(2,2,12);
 var cilindroForma= new THREE.CylinderGeometry(2,2,5,100);
 var cilindroForma2= new THREE.CylinderGeometry(1,1,5,100);
-var tri= new THREE.Shape();
-tri.moveTo(0,0);
-tri.lineTo(2,2);
-tri.lineTo(4,0);
-tri.lineTo(0,0);
-var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
-
 
   var cubo = new THREE.Mesh(cuboForma);
   var brazo1= new THREE.Mesh(brazoForma);
@@ -78,8 +132,8 @@ var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
   requestAnimationFrame(loop);
   malla.rotation.y +=0.01;
   
-  for(var f=0; f<25; f=f+.01){
-  malla.position.x += f;
+  //for(var f=0; f<25; f=f+.01){
+  //malla.position.x += f;
   }
   
   renderer.render(escena,camara);
