@@ -10,7 +10,7 @@ function setup(){
   camara.position.z = 5;
   
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.InnerHeight*,95, window.InnerHeight*.95 );
+  renderer.setSize( window.InnerHeight*.95, window.InnerHeight*.95 );
   document.body.appendChild( renderer.domElement );
 
 function loop(){
