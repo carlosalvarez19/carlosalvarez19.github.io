@@ -24,5 +24,5 @@ function loop(){
 
 var camara, escena, renderer, malla;
 setup();
-loop();
+loop()
   
