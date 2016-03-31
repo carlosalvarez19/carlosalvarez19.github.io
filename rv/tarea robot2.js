@@ -1,17 +1,20 @@
 function Cabeza (){
-    //Para definir una pierna heredara el comportamiento de l objeto 3d, habra que revisar primeramente
+   
 THREE.Object3D.call(this);
-    //entonces se procede a desarrollar las mallas par dar forma a un a pierna muy sencilla
-this.ojos = new THREE.Mesh( new THREE.CylinderGeometry(2,2,5,100) );
+    
+this.ojo1 = new THREE.Mesh( new THREE.CylinderGeometry(2,2,5,100) );
+this.ojo2 = new THREE.Mesh( new THREE.CylinderGeometry(2,2,5,100) );
 this.cuello = new THREE.Mesh( new THREE.CylinderGeometry(1,1,5,100) );
-this.ojos.position.y = -2.5;
-this.pie.position.y = -4.5;
-this.pie.position.x = 1;
-this.add(this.pierna);
-this.add(this.pie);
+this.ojo1.position.y = 10;
+this.ojo2.position.y = 10;
+this.ojo1.position.x = -2;
+this.ojo2.position.x = 2;
+this.cuello.position.y = 7;
+this.add(this.cuello);
+this.add(this.ojo1);
+this.add(this.ojo2);
 }
 
-    //finalmente se agraga 
 Cabeza.prototype = new THREE.Object3D();
 
 
@@ -24,9 +27,8 @@ function setup() {
     tri.lineTo(0,0);
     var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-5});
   
-    var cuerpo = new THREE.Mesh( new THREE.CylinderGeometry(1,2,5,10));
-    piernaD = new Pierna();
-    piernaI = new Pierna();
+    var cuerpoForma = new THREE.Mesh( new THREE.BoxGeometry(10,10,10) );
+    cabeza = new Cabeza();
     cuerpo.position.y = 2;
     piernaD.position.z = -1;
     piernaI.position.z = 1;
@@ -61,7 +63,7 @@ loop();
 
 function setup(){
 
-var cuboForma= new THREE.BoxGeometry(10,10,10);
+var cuboForma= 
 var brazoForma= new THREE.BoxGeometry(2,2,12);
 var cilindroForma= new THREE.CylinderGeometry(2,2,5,100);
 var cilindroForma2= new THREE.CylinderGeometry(1,1,5,100);
