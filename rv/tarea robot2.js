@@ -13,6 +13,7 @@ this.cuello.position.y = 7;
 this.add(this.cuello);
 this.add(this.ojo1);
 this.add(this.ojo2);
+
 }
 
 Cabeza.prototype = new THREE.Object3D();
