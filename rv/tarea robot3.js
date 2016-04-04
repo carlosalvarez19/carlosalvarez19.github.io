@@ -148,8 +148,8 @@ tri.lineTo(100,0);
 tri.lineTo(0,0);
 var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-50});
 
-var cuboMaterial = new THREE.MeshLambertMaterial({color: '#ffffff'});
-var trianguloMaterial = new THREE.MeshPhongMaterial({color: '#00cc00'});
+var cuboMaterial = new THREE.MeshLambertMaterial({color: '#ccffff'});
+var trianguloMaterial = new THREE.MeshPhongMaterial({color: '#00ffcc'});
 
 var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
 var triangulo1 = new THREE.Mesh( trianguloForma, trianguloMaterial );
