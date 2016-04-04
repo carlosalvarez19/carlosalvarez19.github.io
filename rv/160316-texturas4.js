@@ -15,7 +15,7 @@ function setup() {
   escena.add(luzpuntual);
   
   camara = new THREE.PerspectiveCamera();
-  camara.position.z = 10;
+  camara.position.z = 5;
   
   
   renderer = new THREE.WebGLRenderer();
