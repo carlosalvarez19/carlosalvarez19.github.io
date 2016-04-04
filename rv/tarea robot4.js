@@ -153,7 +153,7 @@ THREE.ImageUtils.crossOrigin = '';
 var   textura3   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 
-var cuboForma=new THREE.BoxGeometry(100,100,100);
+var cuboForma=new THREE.BoxGeometry(100,100,100,100);
 var tri= new THREE.Shape();
 tri.moveTo(0,0);
 tri.lineTo(50,50);
