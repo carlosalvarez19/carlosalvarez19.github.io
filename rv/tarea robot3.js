@@ -109,9 +109,9 @@ function Cabeza (){
 THREE.Object3D.call(this);
 
 var cilindroForma = new THREE.CylinderGeometry(20,20,50,100);
-var cilindroMaterial = new THREE.DepthMaterial( );
+var cilindroMaterial = new THREE.MeshDepthMaterial( );
 var cilindro2Forma = new THREE.CylinderGeometry(10,10,50,100);
-var cilindro2Material = new THREE.DepthMaterial( );
+var cilindro2Material = new THREE.MeshDepthMaterial( );
          
 
 this.cilindro1 = new THREE.Mesh( cilindroForma, cilindroMaterial );
