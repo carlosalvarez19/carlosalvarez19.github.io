@@ -2,7 +2,10 @@ function Brazo (){
 
 THREE.Object3D.call(this);
 
-var brazoMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+THREE.ImageUtils.crossOrigin = '';
+var textura1 = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+
+var brazoMaterial = new THREE.MeshBasicMaterial( {map: textura} );
 var brazoForma = new THREE.BoxGeometry(20,20,120);
  
 this.brazo = new THREE.Mesh( brazoForma, brazoMaterial );
@@ -32,7 +35,7 @@ this.brazo = new THREE.Mesh( brazoForma, brazoMaterial );
   gripper.lineTo(0,0);
   
   gripperForma = new THREE.ExtrudeGeometry(gripper,{amount:15});
-  var griperMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+  var griperMaterial = new THREE.MeshBasicMaterial( {map: textura} );
    
   this.griper = new THREE.Mesh( gripperForma, griperMaterial ); 
 
@@ -55,7 +58,10 @@ function Brazo2 (){
 
 THREE.Object3D.call(this);
 
-var brazoMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+THREE.ImageUtils.crossOrigin = '';
+var   textura1   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+
+var brazoMaterial = new THREE.MeshBasicMaterial( {map: textura} );
 var brazoForma = new THREE.BoxGeometry(20,20,120);
  
 this.brazo = new THREE.Mesh( brazoForma, brazoMaterial );
@@ -85,7 +91,7 @@ this.brazo = new THREE.Mesh( brazoForma, brazoMaterial );
   gripper.lineTo(0,0);
   
   gripperForma = new THREE.ExtrudeGeometry(gripper,{amount:15});
-  var griperMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+  var griperMaterial = new THREE.MeshBasicMaterial( {map: textura} );
    
   this.griper = new THREE.Mesh(gripperForma, griperMaterial);
   
@@ -108,10 +114,13 @@ function Cabeza (){
 
 THREE.Object3D.call(this);
 
+THREE.ImageUtils.crossOrigin = '';
+var   textura2   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+
 var cilindroForma = new THREE.CylinderGeometry(20,20,50,100);
-var cilindroMaterial = new THREE.MeshDepthMaterial( );
+var cilindroMaterial = new THREE.MeshBasicMaterial( {map: textura2} );
 var cilindro2Forma = new THREE.CylinderGeometry(10,10,50,100);
-var cilindro2Material = new THREE.MeshDepthMaterial( );
+var cilindro2Material = new THREE.MeshBasicMaterial( {map: textura2} );
          
 
 this.cilindro1 = new THREE.Mesh( cilindroForma, cilindroMaterial );
@@ -140,6 +149,10 @@ Cabeza.prototype=new THREE.Object3D();
 
 function setup(){
 
+THREE.ImageUtils.crossOrigin = ''; 
+var   textura3   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+
 var cuboForma=new THREE.BoxGeometry(100,100,100);
 var tri= new THREE.Shape();
 tri.moveTo(0,0);
@@ -148,8 +161,8 @@ tri.lineTo(100,0);
 tri.lineTo(0,0);
 var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-50});
 
-var cuboMaterial = new THREE.MeshLambertMaterial({color: '#ccffff'});
-var trianguloMaterial = new THREE.MeshPhongMaterial({color: '#00ffcc'});
+var cuboMaterial = new THREE.MeshBsictMaterial( {map: textura3} );
+var trianguloMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
 
 var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
 var triangulo1 = new THREE.Mesh( trianguloForma, trianguloMaterial );
