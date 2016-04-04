@@ -161,7 +161,7 @@ tri.lineTo(100,0);
 tri.lineTo(0,0);
 var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-50});
 
-var cuboMaterial = new THREE.MeshBsictMaterial( {map: textura3} );
+var cuboMaterial = new THREE.MeshBasictMaterial( {map: textura3} );
 var trianguloMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
 
 var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
