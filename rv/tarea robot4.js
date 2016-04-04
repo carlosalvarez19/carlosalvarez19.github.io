@@ -59,7 +59,7 @@ function Brazo2 (){
 THREE.Object3D.call(this);
 
 THREE.ImageUtils.crossOrigin = '';
-var   textura1   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+var   textura   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 
 var brazoMaterial = new THREE.MeshBasicMaterial( {map: textura} );
 var brazoForma = new THREE.BoxGeometry(20,20,120);
