@@ -191,7 +191,7 @@ THREE.ImageUtils.crossOrigin = '';
 var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 
 var cuboForma=new THREE.BoxGeometry(100,100,100,100);
-var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura3} );
+var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
 
 var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
 
