@@ -194,6 +194,13 @@ var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
 
 this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
 
+ this.cuerpo.position.x=0;
+ this.cuerpo.position.y=0;
+ this.cuerpo.position.z=0;
+ this.cuerpo.rotation.y +=1.57;
+ 
+ this.add(this.cuerpo);
+
 }
 
 
