@@ -237,7 +237,7 @@ function loop() {
   requestAnimationFrame(loop);
   cabeza.rotation.y  += step2;
   malla.rotation.y   -= step2;
-  piernas.rotation.y -= step2:
+  piernas.rotation.y -= step2;
   brazo1.rotation.y  -= step2;
   brazo2.rotation.y  -= step2;
   renderer.render(escena,camara);
