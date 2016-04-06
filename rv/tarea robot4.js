@@ -142,55 +142,69 @@ this.cilindro3 = new THREE.Mesh( cilindro2Forma, cilindro2Material );
  this.add(this.cilindro3);
 }
 
+function Pierna (){
 
-Brazo.prototype=new THREE.Object3D();
-Brazo2.prototype=new THREE.Object3D();
-Cabeza.prototype=new THREE.Object3D();
+THREE.Object3D.call(this);
 
-function setup(){
-
-THREE.ImageUtils.crossOrigin = ''; 
+THREE.ImageUtils.crossOrigin = '';
 var   textura3   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
-var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 
-var cuboForma=new THREE.BoxGeometry(100,100,100,100);
+
 var tri= new THREE.Shape();
 tri.moveTo(0,0);
 tri.lineTo(50,50);
 tri.lineTo(100,0);
 tri.lineTo(0,0);
 var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-50});
-
-var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura3} );
 var trianguloMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
+         
+
+this.pierna = new THREE.Mesh( trianguloForma, trianguloMaterial );
+this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
+
+
+ this.triangulo1.position.x=100;
+ this.triangulo1.position.y=-70;
+ this.triangulo1.position.z=50;
+ this.triangulo1.rotation.y +=1.57;
+
+ this.triangulo2.position.x=-50;
+ this.triangulo2.position.y=-70;
+ this.triangulo2.position.z=50;
+ this.triangulo2.rotation.y +=1.57
+
+ this.add(this.pierna1); 
+ this.add(this.pierna2);
+ 
+}
+
+
+Brazo.prototype=new THREE.Object3D();
+Brazo2.prototype=new THREE.Object3D();
+Cabeza.prototype=new THREE.Object3D();
+Pierna.prototype=new THREE.Object3D();
+
+
+function setup(){
+
+THREE.ImageUtils.crossOrigin = ''; 
+var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
+
+var cuboForma=new THREE.BoxGeometry(100,100,100,100);
+var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura3} );
 
 var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
-var triangulo1 = new THREE.Mesh( trianguloForma, trianguloMaterial );
-var triangulo2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
-  
 
- triangulo1.position.x=100;
- triangulo1.position.y=-70;
- triangulo1.position.z=50;
- triangulo1.rotation.y +=1.57;
-
- triangulo2.position.x=-50;
- triangulo2.position.y=-70;
- triangulo2.position.z=50;
- triangulo2.rotation.y +=1.57
-
- 
  var cuerpo = new THREE.Geometry();
   
  THREE.GeometryUtils.merge(cuerpo, cubo);
- THREE.GeometryUtils.merge(cuerpo, triangulo1);
- THREE.GeometryUtils.merge(cuerpo, triangulo2);
 
  malla= new THREE.Mesh(cuerpo);
  
- brazo1= new Brazo();
- brazo2= new Brazo2();
- cabeza= new Cabeza();
+ brazo1  = new Brazo();
+ brazo2  = new Brazo2();
+ cabeza  = new Cabeza();
+ piernas = new Pierna(); 
   
  //brazo2.position.x=-120;
  
@@ -207,6 +221,7 @@ var triangulo2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
  escena.add(brazo1);
  escena.add(brazo2);
  escena.add(cabeza);
+ escena.add(piernas);
  escena.add(luzPuntual);
 
  camara= new THREE.PerspectiveCamera();
@@ -218,11 +233,13 @@ var triangulo2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
  }
 
 function loop() {
+ 
   requestAnimationFrame(loop);
-  cabeza.rotation.y +=step2;
-  malla.rotation.y-=step2;
-  brazo1.rotation.y-=step2;
-  brazo2.rotation.y-=step2;
+  cabeza.rotation.y  += step2;
+  malla.rotation.y   -= step2;
+  piernas.rotation.y -= step2:
+  brazo1.rotation.y  -= step2;
+  brazo2.rotation.y  -= step2;
   renderer.render(escena,camara);
 if(Math.abs(brazo1.rotation.x)>.5)
   step=-step;
