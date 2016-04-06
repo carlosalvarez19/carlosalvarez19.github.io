@@ -184,17 +184,22 @@ Brazo2.prototype=new THREE.Object3D();
 Cabeza.prototype=new THREE.Object3D();
 Pierna.prototype=new THREE.Object3D();
 
-
-function setup(){
-
+function Cuerpo(){
+ 
 THREE.ImageUtils.crossOrigin = ''; 
 var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 
 var cuboForma=new THREE.BoxGeometry(100,100,100,100);
 var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
-var cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
 
- 
+this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
+
+}
+
+
+function setup(){
+
+ cuerpo  = new Cuerpo();
  brazo1  = new Brazo();
  brazo2  = new Brazo2();
  cabeza  = new Cabeza();
@@ -229,7 +234,7 @@ function loop() {
  
   requestAnimationFrame(loop);
   cabeza.rotation.y  += step2;
-  cuerpo.rotation.y   -= step2;
+  cuerpo.rotation.y  -= step2;
   piernas.rotation.y -= step2;
   brazo1.rotation.y  -= step2;
   brazo2.rotation.y  -= step2;
