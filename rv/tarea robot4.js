@@ -179,11 +179,6 @@ this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
 }
 
 
-Brazo.prototype=new THREE.Object3D();
-Brazo2.prototype=new THREE.Object3D();
-Cabeza.prototype=new THREE.Object3D();
-Pierna.prototype=new THREE.Object3D();
-
 function Cuerpo(){
  
 THREE.ImageUtils.crossOrigin = ''; 
@@ -202,6 +197,14 @@ this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
  this.add(this.cuerpo);
 
 }
+
+
+Cuerpo.prototype = new THREE.Object3D();
+Brazo.prototype  = new THREE.Object3D();
+Brazo2.prototype = new THREE.Object3D();
+Cabeza.prototype = new THREE.Object3D();
+Pierna.prototype = new THREE.Object3D();
+
 
 
 function setup(){
