@@ -156,7 +156,7 @@ tri.lineTo(50,50);
 tri.lineTo(100,0);
 tri.lineTo(0,0);
 var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-50});
-var trianguloMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
+var trianguloMaterial = new THREE.MeshBasicMaterial( {map: textura3} );
          
 
 this.pierna = new THREE.Mesh( trianguloForma, trianguloMaterial );
