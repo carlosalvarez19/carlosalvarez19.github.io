@@ -163,17 +163,17 @@ this.pierna = new THREE.Mesh( trianguloForma, trianguloMaterial );
 this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
 
 
- this.triangulo1.position.x=100;
- this.triangulo1.position.y=-70;
- this.triangulo1.position.z=50;
- this.triangulo1.rotation.y +=1.57;
+ this.pierna.position.x=100;
+ this.pierna.position.y=-70;
+ this.pierna.position.z=50;
+ this.pierna.rotation.y +=1.57;
 
- this.triangulo2.position.x=-50;
- this.triangulo2.position.y=-70;
- this.triangulo2.position.z=50;
- this.triangulo2.rotation.y +=1.57
+ this.pierna2.position.x=-50;
+ this.pierna2.position.y=-70;
+ this.pierna2.position.z=50;
+ this.pierna2.rotation.y +=1.57
 
- this.add(this.pierna1); 
+ this.add(this.pierna); 
  this.add(this.pierna2);
  
 }
