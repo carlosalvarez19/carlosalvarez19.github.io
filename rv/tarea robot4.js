@@ -192,21 +192,14 @@ var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/tex
 
 var cuboForma=new THREE.BoxGeometry(100,100,100,100);
 var cuboMaterial = new THREE.MeshBasicMaterial( {map: textura4} );
+var cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
 
-var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
-
- var cuerpo = new THREE.Geometry();
-  
- THREE.GeometryUtils.merge(cuerpo, cubo);
-
- malla= new THREE.Mesh(cuerpo);
  
  brazo1  = new Brazo();
  brazo2  = new Brazo2();
  cabeza  = new Cabeza();
  piernas = new Pierna(); 
   
- //brazo2.position.x=-120;
  
  step=0.05; 
  step2=0.01;
@@ -217,7 +210,7 @@ var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
  luzPuntual.position.z=10;
 
  escena= new THREE.Scene();
- escena.add(malla);
+ escena.add(cuerpo);
  escena.add(brazo1);
  escena.add(brazo2);
  escena.add(cabeza);
@@ -236,7 +229,7 @@ function loop() {
  
   requestAnimationFrame(loop);
   cabeza.rotation.y  += step2;
-  malla.rotation.y   -= step2;
+  cuerpo.rotation.y   -= step2;
   piernas.rotation.y -= step2;
   brazo1.rotation.y  -= step2;
   brazo2.rotation.y  -= step2;
@@ -248,7 +241,7 @@ if(Math.abs(brazo1.rotation.x)>.5)
   
 }
 
-var escena, camara, renderer, malla;
+var escena, camara, renderer, cuerpo;
 var step, brazo1, brazo2, cabeza;
 
 setup();
