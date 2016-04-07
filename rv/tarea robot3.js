@@ -193,7 +193,7 @@ this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
  var luzPuntual=new THREE.PointLight(0xffffff);
  this.luzPuntual.position.x=10;
  this.luzPuntual.position.y=10;
- this.luzPuntual.position.z=10;}
+ this.luzPuntual.position.z=10;
  
  this.add(this.luzPuntual);
  
