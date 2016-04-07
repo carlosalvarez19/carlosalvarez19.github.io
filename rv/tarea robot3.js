@@ -222,9 +222,9 @@ function setup(){
  
 
  var luzPuntual=new THREE.PointLight(0xffffff);
- luzPuntual.position.x=100;
- luzPuntual.position.y=100;
- luzPuntual.position.z=100;
+ luzPuntual.position.x=250;
+ luzPuntual.position.y=250;
+ luzPuntual.position.z=250;
 
  escena= new THREE.Scene();
  escena.add(cuerpo);
