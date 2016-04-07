@@ -193,6 +193,10 @@ Cabeza.prototype = new THREE.Object3D();
 Pierna.prototype = new THREE.Object3D();
 
 
+ step=0.05; 
+ step2=0.01;
+ 
+
 function setup(){
  
  cuerpo  = new Cuerpo();
