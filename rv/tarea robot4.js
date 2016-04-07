@@ -194,6 +194,8 @@ this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
  this.cuerpo.position.z=0;
  this.cuerpo.rotation.y +=1.57;
  
+ this.add(this.cuerpo);
+ 
 }
 
 
