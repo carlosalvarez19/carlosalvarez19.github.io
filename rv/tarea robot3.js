@@ -164,6 +164,11 @@ this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
  this.add(this.pierna); 
  this.add(this.pierna2);
  
+ var luzPuntual=new THREE.PointLight(0xffffff);
+ this.luzPuntual.position.x=10;
+ this.luzPuntual.position.y=10;
+ this.luzPuntual.position.z=10;
+ 
 }
 
 
@@ -182,6 +187,11 @@ this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
  this.cuerpo.rotation.y +=1.57;
  
  this.add(this.cuerpo);
+ 
+ var luzPuntual=new THREE.PointLight(0xffffff);
+ this.luzPuntual.position.x=10;
+ this.luzPuntual.position.y=10;
+ this.luzPuntual.position.z=10;
  
 }
 
