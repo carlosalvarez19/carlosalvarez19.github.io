@@ -134,55 +134,66 @@ this.cilindro3 = new THREE.Mesh( cilindro2Forma, cilindro2Material );
 }
 
 
-Brazo.prototype=new THREE.Object3D();
-Brazo2.prototype=new THREE.Object3D();
-Cabeza.prototype=new THREE.Object3D();
+function Pierna (){
 
-function setup(){
+THREE.Object3D.call(this);
 
-var cuboForma=new THREE.BoxGeometry(100,100,100);
 var tri= new THREE.Shape();
 tri.moveTo(0,0);
 tri.lineTo(50,50);
 tri.lineTo(100,0);
 tri.lineTo(0,0);
 var trianguloForma = new THREE.ExtrudeGeometry(tri,{amount:-50});
-
-var cuboMaterial = new THREE.MeshLambertMaterial({color: '#ccffff'});
 var trianguloMaterial = new THREE.MeshPhongMaterial({color: '#00ffcc'});
+         
 
-var cubo = new THREE.Mesh( cuboForma, cuboMaterial );
-var triangulo1 = new THREE.Mesh( trianguloForma, trianguloMaterial );
-var triangulo2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
-  
+this.pierna = new THREE.Mesh( trianguloForma, trianguloMaterial );
+this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
 
- triangulo1.position.x=100;
- triangulo1.position.y=-70;
- triangulo1.position.z=50;
- triangulo1.rotation.y +=1.57;
 
- triangulo2.position.x=-50;
- triangulo2.position.y=-70;
- triangulo2.position.z=50;
- triangulo2.rotation.y +=1.57
+ this.pierna.position.x=100;
+ this.pierna.position.y=-70;
+ this.pierna.position.z=50;
+ this.pierna.rotation.y +=1.57;
 
+ this.pierna2.position.x=-50;
+ this.pierna2.position.y=-70;
+ this.pierna2.position.z=50;
+ this.pierna2.rotation.y +=1.57
+
+ this.add(this.pierna); 
+ this.add(this.pierna2);
  
- var cuerpo = new THREE.Geometry();
-  
- THREE.GeometryUtils.merge(cuerpo, cubo);
- THREE.GeometryUtils.merge(cuerpo, triangulo1);
- THREE.GeometryUtils.merge(cuerpo, triangulo2);
+}
 
- malla= new THREE.Mesh(cuerpo);
+
+function Cuerpo(){
  
- brazo1= new Brazo();
- brazo2= new Brazo2();
- cabeza= new Cabeza();
-  
- //brazo2.position.x=-120;
+THREE.Object3D.call(this);
  
- step=0.05; 
- step2=0.01;
+var cuboForma=new THREE.BoxGeometry(100,100,100,100);
+var cuboMaterial = new THREE.MeshLambertMaterial({color: '#ccffff'});
+
+this.cuerpo = new THREE.Mesh( cuboForma, cuboMaterial );
+
+ this.cuerpo.position.x=0;
+ this.cuerpo.position.y=0;
+ this.cuerpo.position.z=0;
+ this.cuerpo.rotation.y +=1.57;
+ 
+ this.add(this.cuerpo);
+ 
+}
+
+
+Cuerpo.prototype = new THREE.Object3D();
+Brazo.prototype  = new THREE.Object3D();
+Brazo2.prototype = new THREE.Object3D();
+Cabeza.prototype = new THREE.Object3D();
+Pierna.prototype = new THREE.Object3D();
+
+
+function setup(){
 
  var luzPuntual=new THREE.PointLight(0xffffff);
  luzPuntual.position.x=10;
