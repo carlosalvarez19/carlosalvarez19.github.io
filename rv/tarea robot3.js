@@ -194,6 +194,12 @@ Pierna.prototype = new THREE.Object3D();
 
 
 function setup(){
+ 
+ cuerpo  = new Cuerpo();
+ brazo1  = new Brazo();
+ brazo2  = new Brazo2();
+ cabeza  = new Cabeza();
+ piernas = new Pierna(); 
 
  var luzPuntual=new THREE.PointLight(0xffffff);
  luzPuntual.position.x=10;
@@ -201,10 +207,11 @@ function setup(){
  luzPuntual.position.z=10;
 
  escena= new THREE.Scene();
- escena.add(malla);
+ escena.add(cuerpo);
  escena.add(brazo1);
  escena.add(brazo2);
  escena.add(cabeza);
+ escena.add(piernas);
  escena.add(luzPuntual);
 
  camara= new THREE.PerspectiveCamera();
@@ -217,10 +224,11 @@ function setup(){
 
 function loop() {
   requestAnimationFrame(loop);
-  cabeza.rotation.y +=step2;
-  malla.rotation.y-=step2;
-  brazo1.rotation.y-=step2;
-  brazo2.rotation.y-=step2;
+  cabeza.rotation.y  += step2;
+  cuerpo.rotation.y  -= step2;
+  brazo1.rotation.y  -= step2;
+  brazo2.rotation.y  -= step2;
+  piernas.rotation.y -= step2;
   renderer.render(escena,camara);
 if(Math.abs(brazo1.rotation.x)>.5)
   step=-step;
