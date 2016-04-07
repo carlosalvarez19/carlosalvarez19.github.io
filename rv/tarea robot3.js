@@ -193,9 +193,6 @@ Cabeza.prototype = new THREE.Object3D();
 Pierna.prototype = new THREE.Object3D();
 
 
- step=0.05; 
- step2=0.01;
- 
 
 function setup(){
  
@@ -204,6 +201,11 @@ function setup(){
  brazo2  = new Brazo2();
  cabeza  = new Cabeza();
  piernas = new Pierna(); 
+ 
+ 
+ step=0.05; 
+ step2=0.01;
+ 
 
  var luzPuntual=new THREE.PointLight(0xffffff);
  luzPuntual.position.x=10;
