@@ -165,11 +165,11 @@ this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
  this.add(this.pierna2);
  
  var luzPuntual=new THREE.PointLight(0xffffff);
- this.luzPuntual.position.x=10;
- this.luzPuntual.position.y=10;
- this.luzPuntual.position.z=10;
+ luzPuntual.position.x=10;
+ luzPuntual.position.y=10;
+ luzPuntual.position.z=10;
  
- this.add(this.luzPuntual);
+ //this.add(this.luzPuntual);
  
 }
 
