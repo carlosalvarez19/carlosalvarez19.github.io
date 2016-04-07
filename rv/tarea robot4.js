@@ -181,6 +181,8 @@ this.pierna2 = new THREE.Mesh( trianguloForma, trianguloMaterial );
 
 function Cuerpo(){
  
+THREE.Object3D.call(this);
+ 
 THREE.ImageUtils.crossOrigin = ''; 
 var   textura4   = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/crate.gif');
 
