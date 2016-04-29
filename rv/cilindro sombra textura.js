@@ -1,4 +1,4 @@
-
+function setup(){
   var escena=new THREE.Scene();
   var fov = 75; // Campo de vision
   var aspect=window.innerWidth/window.innerHeight; //relacion de aspecto
@@ -17,15 +17,14 @@ var forma = new THREE.CylinderGeometry(1,1,5);
 var material = new THREE.MeshDepthMaterial({color: 0x08f410});
 var cilindro = new THREE.Mesh(forma, material);
 escena.add(cilindro);
+}
   
-  function render(){
+  function loop(){
     requestAnimationFrame(render);
     
     cilindro.rotation.x +=0.1;
     renderer.render(escena,camara);
   }
-  render();
   
-</script>
-</body>
-</html>
+  setup()
+  loop();
