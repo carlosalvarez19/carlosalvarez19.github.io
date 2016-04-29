@@ -26,5 +26,5 @@ escena.add(cilindro);
     renderer.render(escena,camara);
   }
   
-  setup()
+  setup();
   loop();
