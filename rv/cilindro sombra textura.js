@@ -1,6 +1,6 @@
 function setup(){
   THREE.ImageUtils.crossOrigin = '';
-  var   textura   = THREE.ImageUtils.loadTexture('https://github.com/carlosalvarez19/carlosalvarez19.github.io/blob/master/rv/LPLogo-black.svg.png');
+  var   textura   = THREE.ImageUtils.loadTexture('LPLogo-black.svg.png');
   var   material  = new THREE.MeshPhongMaterial( {map: textura} );
   var   forma     = new THREE.SphereGeometry( 1, 100, 100 );
   malla           = new THREE.Mesh( forma, material );
