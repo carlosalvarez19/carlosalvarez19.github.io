@@ -1,22 +1,31 @@
 function setup(){
-  var escena=new THREE.Scene();
-  var fov = 75; // Campo de vision
-  var aspect=window.innerWidth/window.innerHeight; //relacion de aspecto
-  var near=0.1;// plno cercano
-  var far =1000;// plano lejano
-  var camara = new THREE.PerspectiveCamera(fov, aspect, near, far );
+  THREE.ImageUtils.crossOrigin = '';
+  var   textura   = THREE.ImageUtils.loadTexture('https://github.com/carlosalvarez19/carlosalvarez19.github.io/blob/master/rv/LPLogo-black.svg.png');
+  var   material  = new THREE.MeshPhongMaterial( {map: textura} );
+  var   forma     = new THREE.SphereGeometry( 1, 100, 100 );
+  malla           = new THREE.Mesh( forma, material );
+  malla.rotation.z += 0.25; 
+
+  var luzpuntual  = new THREE.PointLight(0xFFFFFF);
+  luzpuntual.position.x = 10;
+  luzpuntual.position.y = 10;
+  luzpuntual.position.z = 10;
   
-  camara.position.z=5;
+  var forma   = new THREE.BoxGeometry( 1, 1, 2.5);
+  var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+  malla   =new THREE.Mesh( forma, material );
+
+  escena = new THREE.Scene();
+  escena.add(malla);
+  escena.add(luzpuntual);
   
-  var renderer=new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth,window.innerHeight);
-  document.body.appendChild(renderer.domElement);
+  camara = new THREE.PerspectiveCamera();
+  camara.position.z = 5;
   
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  document.body.appendChild( renderer.domElement );
   
-var forma = new THREE.CylinderGeometry(1,1,5);
-var material = new THREE.MeshDepthMaterial({color: 0x08f410});
-var cilindro = new THREE.Mesh(forma, material);
-escena.add(cilindro);
 }
   
   function loop(){
