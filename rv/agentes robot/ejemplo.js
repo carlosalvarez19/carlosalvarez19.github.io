@@ -3,7 +3,7 @@ function Wall(size,x=0,y=0){
   //THREE.ImageUtils.crossOrigin = '';
   //this.textura = 	THREE.ImageUtils.loadTexture('http://3.bp.blogspot.com/-bPbC3gBml80/T02bLOgIu5I/AAAAAAAAKFE/vmC-AZt2wWY/s1600/photofusionvirtual@blogspot+(1).jpg');	
   //THREE.Mesh.call(this, new THREE.BoxGeometry(size,size,size),new THREE.MeshBasicMaterial({map: this.textura}));
-  THREE.Mesh.call(this, new THREE.BoxGeometry(size,size,size),new THREE.MeshBasicMaterial());
+  THREE.Mesh.call(this, new THREE.BoxGeometry(size,size,size),new THREE.MeshNormalMaterial());
   this.size=size;
   this.position.x=x;
   this.position.y=y;
